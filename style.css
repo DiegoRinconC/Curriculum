@@ -1,0 +1,65 @@
+/*Se le asigna al body el color lightblue*/
+body {
+    background-color: lightblue;
+}
+
+/*Se le asigna color rojo y alineado a la izquierda el h1*/
+h1 {
+    color: red;
+    text-align: right;
+}
+
+h2 {
+    color: green;
+    text-align: center;
+}
+
+h3 {
+    color: blue;
+    text-align: left;
+}
+
+h4 {
+    color: red;
+    text-align: right;
+}
+
+h5 {
+    color: green;
+    text-align: center;
+}
+
+h6 {
+    color: blue;
+    text-align: left;
+}
+
+
+p {
+    font-family: arial;
+    font-size: 40px;
+}
+
+ul {
+    font-family: comicsands;
+    font-size: 20px;
+    color: orange;
+}
+
+ol {
+    font-family: verdana;
+    font-size: 60px;
+    color: gray;
+}
+
+ol li{
+    display:block;
+    float:left;
+    padding:10px;
+}
+
+ul li {
+    display:block;
+    float:left;
+    padding:8px;
+}
