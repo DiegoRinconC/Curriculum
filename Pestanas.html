@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> -->
+
+		<title>pestanas</title>
+		<!-- <meta name="description" content=""> -->
+		<!-- <meta name="author" content="satur"> -->
+
+		<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0"> -->
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+		<!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
+	</head>
+	<style>
+		.contenedor {
+			position: justify;
+			width: 500px;
+			height: 500px;
+		}
+		.cabecera {
+			display: inline-block;
+			text-decoration: none;
+			padding: 10px;
+			border: 2px solid;
+			position: relative;
+			color: black;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			transform: translateY(2px);
+			z-index: 2;
+		}
+		.pestana {
+			position: absolute;
+			border: 2px solid;
+			height: 100%;
+			visibility: hidden;
+			opacity: 0;
+			transition: visibility 1s, opacity 1s;
+		}
+		
+		.p-activa {
+			visibility: visible;
+			opacity: 1;
+		}
+		.c-activa {
+			border-bottom-color: white;
+		}
+		
+		p{
+			text-align: relative;
+			padding: 100px;
+		}
+	</style>
+	<script>
+	function mostrarPestana(n){
+		var pestanas = document.getElementsByClassName("pestana");
+		var cabecera = document.getElementsByClassName("cabecera");
+		for(i = 0; i<pestanas.length; i++){
+			if(pestanas[i].className.includes("p-activa")){
+				pestanas[i].className = pestanas[i].className.replace("p-activa", "");
+				cabecera[i].className = cabecera[i].className.replace("c-activa", "");
+				break;
+			}
+		}
+		pestanas[n].className += " p-activa";
+		cabecera[n].className += " c-activa";
+	}
+	</script>
+	<body>
+		<h1>Los satelites galeanos</h1>
+		<div class="contenedor">
+			<a href="#" class="cabecera c-activa" onclick="mostrarPestana(0);">Ío</a>
+			<div class="pestana p-activa">
+				<p>
+					Ío es el satélite galileano más cercano a Júpiter. Es el cuarto satélite por su tamaño, tiene la más alta densidad entre todos los satélites y, en proporción, la menor cantidad de agua entre todos los objetos conocidos del sistema solar. Fue descubierto por Galileo Galilei en 1610. Recibe su nombre de Ío, una de las muchas doncellas de las que Zeus se enamoró en la mitología griega, aunque inicialmente el nombre de Júpiter I como primer satélite de Júpiter según su cercanía al planeta.
+
+Con un diamétro de 3600 kilómetros, es la tercera más grande de las lunas de Júpiter. En Ío hay planicies muy extensas y también cadenas montañosas, pero la ausencia de cráteres de impacto sugiere la juventud geológica de su superficie.1 Con más de 400 volcanes activos, es el objeto más activo geológicamente del sistema solar.2 Esta actividad tan elevada se debe al calentamiento por marea, que es la respuesta a la disipación de enormes cantidades de energía proveniente de la fricción provocada en el interior del satélite. Varios volcanes producen nubes de azufre y dióxido de azufre, que se elevan hasta los 500 km. Su superficie también posee más de cien montañas que han sido levantadas por la extrema compresión en la base de la corteza de silicatos del satélite. Algunas de estas montañas son más altas que el Monte Everest.
+				</p>
+			</div>
+			<a href="#" class="cabecera" onclick="mostrarPestana(1);">Europa</a>
+			<div class="pestana">
+				<p>
+					Europa es el sexto satélite natural de Júpiter en orden creciente de distancia y el más pequeño de los cuatro satélites galileanos. Fue descubierto en 1610 por Galileo 1 y nombrado por Europa, la madre del rey Minos de Creta y amante de Zeus. Simon Marius sugirió el nombre tras su descubrimiento, pero este nombre, así como el nombre de los otros satélites galileanos, no fue de uso común hasta mediados del siglo XX. En gran parte de la literatura astronómica temprana aparece mencionado por su designación numeral romana, Júpiter II, o como el segundo satélite de Júpiter. Además de haber sido observado mediante telescopios terrestres, varias sondas espaciales (las primeras a principios de los años 1970) lo han examinado de cerca. Es el sexto satélite más grande del sistema solar.
+				</p>
+			</div>
+			<a href="#" class="cabecera" onclick="mostrarPestana(2);">Ganimedes</a>
+			<div class="pestana">
+				<p>
+					Ganimedes o Ganímedes, del griego Γανυμήδης, es el satélite natural más grande de Júpiter y del sistema solar,4 además de ser el único que tiene campo magnético. En orden de distancias al planeta, es el séptimo más cercano y el tercero de los galileanos, el primer grupo de objetos descubiertos que orbitan alrededor de un planeta. Completa su órbita en aproximadamente siete días y mantiene una resonancia orbital con Ío y Europa de 1:2:4. Su diámetro es de 5268 km, un 8 % mayor que el de Mercurio, aunque solo representa el 45 % de su masa.9 Es un 2 % mayor que Titán, el segundo satélite natural más grande, y el doble de masivo que la Luna.10 En términos absolutos, es el noveno objeto más grande del sistema solar y el mayor que no posee una atmósfera significativa.
+
+Ganimedes se compone de silicatos y hielo de agua en cantidades aproximadamente iguales.11 Es un objeto diferenciado con un núcleo fundido rico en hierro y un océano interno que puede poseer más agua que todos los océanos de la Tierra juntos.12 13 14 Su superficie está constituida por dos tipos diferentes de terrenos: oscuros y claros. Las regiones oscuras, saturadas de cráteres de impacto y formadas hace cuatro mil millones de años, cubren alrededor de un tercio del satélite. El resto de la superficie está ocupado por regiones claras, áreas cortadas por amplios surcos y crestas y solo un poco menos antiguas. Las causas geológicas de la perturbación que los originó no se conocen del todo, pero los terrenos claros son quizá el resultado de la actividad tectónica provocada por el calentamiento de marea.
+				</p>
+			</div>
+			<a href="#" class="cabecera" onclick="mostrarPestana(3);">Calisto</a>
+			<div class="pestana">
+				<p>
+					Calisto (del griego Καλλιστώ) es un satélite del planeta Júpiter, descubierto en 1610 por Galileo Galilei.1 Es el tercer satélite más grande del sistema solar y el segundo del sistema joviano, después de Ganímedes. Calisto tiene aproximadamente el 99 % del diámetro del planeta Mercurio, pero solo un tercio de su masa. Es el cuarto satélite galileano en cuanto a distancia a Júpiter, con un radio orbital de 1 880 000 kilómetros.2 No está influido por la resonancia orbital que afecta a los tres satélites galileanos interiores —Ío, Europa y Ganímedes—, por lo que no sufre un calentamiento apreciable por fuerzas de marea, como sí ocurre en los otros tres.8 Calisto tiene una rotación síncrona, es decir, su período de rotación concuerda con su período orbital, de manera que, igual que la Luna con la Tierra, siempre «muestra» la misma cara a Júpiter. La superficie de Calisto no está tan influida por la magnetosfera de Júpiter como la de los otros satélites interiores ya que su órbita es más lejana.9
+
+Este satélite está compuesto aproximadamente por partes iguales de roca y hielo, con una densidad media de unos 1,83 g/cm3. Los componentes detectados mediante la firma espectral de la superficie incluyen hielo, dióxido de carbono, silicatos y compuestos orgánicos. La investigación de la sonda espacial Galileo reveló que Calisto tiene un núcleo, compuesto principalmente de silicatos, y además, la posibilidad de la existencia de un océano interno de agua líquida a una profundidad superior a 100 kilómetros
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

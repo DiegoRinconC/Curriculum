@@ -1,12 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript" src="Cur_DiegoJS.js"></script>
-  <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="style_Curr.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<title>Diego Rincón</title>
+  <style>
+    .contenedor {
+      position: relative;
+      width: 1300px;
+      height: 600px;
+    }
+    .cabecera {
+      display: inline-block;
+      text-decoration: none;
+      padding: 10px;
+      border: 2px solid;
+      position: relative;
+      color: black;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      transform: translateY(2px);
+      z-index: 2;
+    }
+    .pestana {
+      position: absolute;
+      border: 2px solid;
+      height: 100%;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 1s, opacity 1s;
+    }
+    
+    .p-activa {
+      visibility: visible;
+      opacity: 1;
+    }
+    .c-activa {
+      border-bottom-color: white;
+    }
+    
+    p{
+      text-align: justify;
+      padding: 100px;
+    }
+  </style>  
+  <script>
+  function mostrarPestana(n){
+    var pestanas = document.getElementsByClassName("pestana");
+    var cabecera = document.getElementsByClassName("cabecera");
+    for(i = 0; i<pestanas.length; i++){
+      if(pestanas[i].className.includes("p-activa")){
+        pestanas[i].className = pestanas[i].className.replace("p-activa", "");
+        cabecera[i].className = cabecera[i].className.replace("c-activa", "");
+        break;
+      }
+    }
+    pestanas[n].className += " p-activa";
+    cabecera[n].className += " c-activa";
+  }
+  </script>  
 </head>
 <body>
   <div class="row">
@@ -67,27 +120,125 @@
         </li>
       </ul>
   </div>
-  <div class="contenedor">
-     <div id="pestanas">
-        <ul id=lista>
-           <li id="pestana1"><a href='javascript:cambiarPestanna(pestanas,pestana1);'>Información Personal</a>
-           </li>
-           <li id="pestana2"><a href='javascript:cambiarPestanna(pestanas,pestana2);'>Estudios</a>
-           </li>
-           <li id="pestana3"><a href='javascript:cambiarPestanna(pestanas,pestana3);'>Experiencia</a>
-           </li>
-           <li id="pestana4"><a href='javascript:cambiarPestanna(pestanas,pestana4);'>Proyección</a>
-           </li>
-        </ul>
+
+  <div class="row">
+    <div class="col-md-2">
+      
+    </div>
+    <div class="col-md-8">
+    <div class="contenedor">
+      <a href="#" class="cabecera c-activa" onclick="mostrarPestana(0);">Información Personal</a>
+      <div class="pestana p-activa">
+        <p>
+          Edad: 34 años.
+          <br>
+          Dirección: Calle 88 No. 95 G - 15
+          <br>
+          Tel. 318 261 8520
+          <br>          
+          email: diego84darc@gmail.com
+        </p>
       </div>
-            
-      <body onload="javascript:cambiarPestanna(pestanas,pestana2);">
-      <div id="contenidopestanas">
-         <div id="cpestana1">HTML, siglas de HyperText Markup Language («lenguaje de marcado de hipertexto»), hace referencia al lenguaje de marcado predominante para la elaboración de páginas web que se utiliza para describir y traducir la estructura y la información en forma de texto, así como para complementar el texto con objetos tales como imágenes. El HTML se escribe en forma de «etiquetas», rodeadas por corchetes angulares (<,>). HTML también puede describir, hasta un cierto punto, la apariencia de un documento, y puede incluir un script (por ejemplo JavaScript), el cual puede afectar el comportamiento de navegadores web y otros procesadores de HTML.</div>
-         <div id="cpestana2">El nombre hojas de estilo en cascada viene del inglés Cascading Style Sheets, del que toma sus siglas. CSS es un lenguaje usado para definir la presentación de un documento estructurado escrito en HTML o XML2 (y por extensión en XHTML). El W3C (World Wide Web Consortium) es el encargado de formular la especificación de las hojas de estilo que servirán de estándar para los agentes de usuario o navegadores.</div>
-         <div id="cpestana3">JavaScript es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos,3 basado en prototipos, imperativo, débilmente tipado y dinámico.</div>
-         <div id="cpestana4">PHP es un lenguaje de programación de uso general de script del lado del servidor originalmente diseñado para el desarrollo web de contenido dinámico. Fue uno de los primeros lenguajes de programación del lado del servidor que se podían incorporar directamente en el documento HTML en lugar de llamar a un archivo externo que procese los datos. El código es interpretado por un servidor web con un módulo de procesador de PHP que genera la página Web resultante. PHP ha evolucionado por lo que ahora incluye también una interfaz de línea de comandos que puede ser usada en aplicaciones gráficas independientes. PHP puede ser usado en la mayoría de los servidores web al igual que en casi todos los sistemas operativos y plataformas sin ningún costo.</div>
+      <a href="#" class="cabecera" onclick="mostrarPestana(1);">Estudios</a>
+      <div class="pestana">
+        <p>
+          Actualmente         Curso Tecnologías Hibridas
+          <Br>
+          Bogotá-Colombia         Fedesoft 
+          <Br>
+          <Br>
+          Actualmente         Especialización Ingeniería de Software
+          <Br>
+          Bogotá-Colombia        Universidad Distrital Francisco José de Caldas
+          <Br>          
+          <Br>          
+          2.014            Certificación SEI – Certified PSP Developer
+          <Br> 
+          Bogotá-Colombia        Software Engineering Institute SEI / Carnegie Mellon
+          <Br> 
+          <Br> 
+          2.013            Diplomado Gerencia de Proyectos aplicando procesos PMI
+           <Br>
+          Bogotá-Colombia        Cámara de Comercio de Bogotá
+          <Br> 
+          <Br>
+          2.013            Certificación SEI – Certified PSP Fundamentals
+          <Br> 
+          Bogotá-Colombia        Software Engineering Institute SEI / Carnegie Mellon
+          <Br>
+          <Br>          
+          2.008              Ingeniería de Sistemas
+          <Br> 
+          Bogotá-Colombia        Fundación Universitaria Los Libertadores
+          <Br> 
+          <Br>          
+          2.005              Tecnología en Sistemas
+          <Br> 
+          Bogotá-Colombia        Fundación CIDCA
+        </p>
       </div>
+      <a href="#" class="cabecera" onclick="mostrarPestana(2);">Experiencia</a>
+      <div class="pestana">
+        <p>
+          De Octubre/2008 a Actualmente, Bogotá-Colombia
+          <br>                                            
+          NOVATEC SOLUTIONS, Sector Financiero
+          <br>                                            
+          Director de Proyectos
+          <br>                                            
+          - Liderazgo de equipos de trabajo multidisciplinarios, seguimientos, análisis, diseño, construcción, pruebas e implementación de productos de software y gestión con el cliente.
+          <br>                                            
+          - Especialidad en el sector de banca desarrollando productos para los siguientes clientes:
+          <br>                                            
+          ITAÚ-COLOMBIA: Diseño, Construcción e Implementación de Software de Migración en la plataforma HOST ALTAIR (COBOL) a PHOENIX y TERADATA.
+          <br>                                            
+          CORPBANCA-COLOMBIA: Diseño, Construcción e Implementación de Software de Migración en la plataforma HOST ALTAIR (COBOL) a AS/400 (RPG). 
+          <br>                                            
+          BBVA-COLOMBIA: Desarrollo de proyectos de software a la medida en los módulos de activos, clientes, medios de pago y pasivos.
+          <br>                                            
+          <br>                                            
+          De Junio/2007 a Octubre/2008 Bogotá-Colombia                                            
+          <br>                                            
+          CMR Falabella, Sector Financiero
+          <br>                                            
+          Analista de Desarrollo
+          <br>                                            
+          - Soporte a incidencias, levantamiento de requerimientos, análisis, diseño, construcción, pruebas e implementación de productos de software y gestión con el cliente.
+          <br>                                            
+          - Desarrollo de productos de software sobre la tarjeta de crédito CMR, según las necesidades comerciales de la compañía y soporte a nivel nacional de las incidencias generadas por el producto. (OPEN VMS/COBOL)
+          <br>                                                             
+          <br>                                                                                     
+          De Enero/2007 a Junio/2007 Bogotá-Colombia                                            
+          <br>                                            
+          DTS Software Latin, Sector Financiero
+          <br>                                            
+          Programador Junior
+          <br>                                            
+          - Construcción y pruebas unitarias de software.
+          <br>                                            
+          - Trabajo realizado como Outsourcing con el cliente BBVA en el aplicativo de préstamos (HOST ALTAIR – COBOL).
+        </p>
+      </div>
+      <a href="#" class="cabecera" onclick="mostrarPestana(3);">Proyección</a>
+      <div class="pestana">
+        <p>
+          A Corto Plazo:
+          <Br>
+          Culminar la especialización, realizar estudios técnicos, de metodologías de desarrollo ágiles y de gestión para prepararme para los proyectos futuros.
+          <Br>
+          <br>
+          A Largo Plazo:
+          <Br>
+          Desarrollar proyectos personales de Software que proporcionen un aporte social. Por medio de estos proyectos crear empresa.
+        </p>
+      </div>
+    </div>
+
+    </div>
+    <div class="col-md-2">
+
+    </div>
   </div>
+
   </body>
 </html>
